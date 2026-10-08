@@ -1,19 +1,21 @@
 import React from 'react';
-import HeroProducts from './HeroProducts';
 import HeroBenefits from './HeroBenefits';
 
 /**
  * HeroSection Component
  * Recreates the exact visual composition, typography, and atmosphere
- * of the PIFU DERMOGUIDE campaign reference image, keeping the hero
- * campaign scene completely on the background.
+ * of the PIFU DERMOGUIDE campaign reference image.
+ * Keeps the campaign visual completely in the background without any
+ * overlaid product cutouts or hover popups.
  */
 export default function HeroSection() {
   return (
     <section className="pifu-hero" id="home" aria-label="PIFU Skincare Campaign">
       {/* 
         Full Hero Background Layer:
-        Spans completely edge-to-edge across the entire hero section
+        Spans completely edge-to-edge across the entire hero section.
+        Contains the complete campaign scene with stone podium, water ripples,
+        splashes, the three products, and the lifestyle model.
       */}
       <div className="pifu-hero__bg-wrap" aria-hidden="true">
         <picture>
@@ -25,7 +27,7 @@ export default function HeroSection() {
             loading="eager"
           />
         </picture>
-        {/* Soft luminous gradient overlay on text area */}
+        {/* Soft luminous gradient overlay on the left for crystal-clear typography */}
         <div className="pifu-hero__bg-overlay" />
       </div>
 
@@ -139,9 +141,32 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* 2. Products Hotspot Layer & Routine Badge over the background scene */}
+          {/* 2. Visual Zone: Floating Routine Badge in lower right */}
           <div className="pifu-hero__visual">
-            <HeroProducts />
+            <div className="pifu-routine-badge" aria-label="Daily Routine: Cleanse, Hydrate, Balance">
+              <div className="pifu-routine-badge__circle">
+                <span className="pifu-routine-badge__step">CLEANSE</span>
+                <span className="pifu-routine-badge__step">HYDRATE</span>
+                <span className="pifu-routine-badge__step">BALANCE</span>
+              </div>
+              {/* Botanical leaf attached to right rim */}
+              <div className="pifu-routine-badge__leaf" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M17 3C10 3 4 8 4 15C4 18.5 7 21 10.5 21C17.5 21 21 13 21 3H17Z"
+                    fill="#48BB78"
+                    stroke="#2F855A"
+                    strokeWidth="1.2"
+                  />
+                  <path
+                    d="M4 21C9 16 14 11 20 5"
+                    stroke="#2F855A"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
 

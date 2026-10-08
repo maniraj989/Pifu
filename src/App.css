@@ -13,7 +13,7 @@ html, body {
 }
 
 .pifu-app {
-  min-height: 100vh;
+  min-height: 140vh;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -23,7 +23,7 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   HEADER
+   HEADER (Sticky with Glassmorphism Opacity on Scroll)
    -------------------------------------------------------------------------- */
 .pifu-header {
   position: sticky;
@@ -31,14 +31,20 @@ html, body {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-  z-index: 100;
-  transition: all var(--transition-smooth);
+  z-index: 1000;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pifu-header--scrolled {
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 12px 36px -8px rgba(0, 98, 210, 0.12), 0 4px 16px rgba(15, 23, 42, 0.05) !important;
 }
 
 .pifu-header__container {
@@ -379,7 +385,7 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   HERO PRODUCTS & INTERACTIVE ZONE (Over Background Scene)
+   HERO VISUAL & ROUTINE BADGE
    -------------------------------------------------------------------------- */
 .pifu-hero__visual {
   grid-column: 2 / 3;
@@ -387,134 +393,20 @@ html, body {
   width: 100%;
   height: 100%;
   min-height: 480px;
-}
-
-.pifu-hero-products {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.pifu-hero-desktop-stage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 480px;
-}
-
-/* Interactive product cutout hotspot layer */
-.pifu-products-interactive-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   pointer-events: none;
 }
 
-.pifu-product-hotspot {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  pointer-events: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform var(--transition-fast);
-}
-
-.pifu-product-cutout {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0;
-  transition: all var(--transition-smooth);
-}
-
-.pifu-product-hotspot:hover .pifu-product-cutout,
-.pifu-product-hotspot:focus .pifu-product-cutout {
-  opacity: 1;
-  transform: translateY(-8px) scale(1.04);
-  filter: drop-shadow(0 16px 24px rgba(0, 60, 140, 0.35));
-}
-
-/* Rich Real Formulation Tooltip */
-.pifu-product-tooltip {
-  position: absolute;
-  bottom: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%) translateY(6px);
-  background: rgba(15, 23, 42, 0.96);
-  backdrop-filter: blur(12px);
-  color: #ffffff;
-  padding: 12px 16px;
-  border-radius: 12px;
-  min-width: 220px;
-  max-width: 280px;
-  pointer-events: none;
-  opacity: 0;
-  transition: all var(--transition-fast);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.35);
-  z-index: 50;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.pifu-product-tooltip--visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.pifu-product-tooltip__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-
-.pifu-product-tooltip__step-tag {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  margin-bottom: 2px;
-  text-transform: uppercase;
-}
-
-.pifu-product-tooltip__title {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.25;
-}
-
-.pifu-product-tooltip__meta {
-  display: block;
-  font-size: 11px;
-  color: #94a3b8;
-  margin-top: 2px;
-  margin-bottom: 4px;
-}
-
-.pifu-product-tooltip__ingredients {
-  font-size: 10.5px;
-  color: #cbd5e1;
-  line-height: 1.35;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 5px;
-  margin-top: 3px;
-}
-
-/* Routine Badge */
+/* Routine Badge in lower right */
 .pifu-routine-badge {
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
   right: 6%;
   z-index: 25;
   animation: floatGentle 4.5s ease-in-out infinite;
+  pointer-events: auto;
 }
 
 .pifu-routine-badge__circle {
@@ -547,11 +439,6 @@ html, body {
   right: -8px;
   transform: translateY(-50%);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
-}
-
-/* Mobile Products Showcase Container */
-.pifu-hero-mobile-products {
-  display: none;
 }
 
 
@@ -910,78 +797,32 @@ html, body {
     justify-content: center;
   }
 
-  /* Mobile Visual: Real Product Showcase */
+  /* Mobile Visual: Routine Badge */
   .pifu-hero__visual {
     order: 2 !important;
     grid-column: unset !important;
     grid-row: unset !important;
-    margin: 8px 0 16px 0;
+    margin: 4px 0 12px 0;
     width: 100% !important;
     min-width: 0 !important;
+    min-height: 80px !important;
     height: auto !important;
-    min-height: unset !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    position: relative !important;
   }
-  .pifu-hero-desktop-stage {
-    display: none !important;
+  .pifu-routine-badge {
+    position: relative !important;
+    bottom: unset !important;
+    right: unset !important;
+    margin-right: 12px;
   }
-  .pifu-hero-mobile-products {
-    display: block !important;
-    width: 100%;
+  .pifu-routine-badge__circle {
+    width: 72px;
+    height: 72px;
   }
-  .pifu-mobile-products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 100%;
-  }
-  .pifu-mobile-product-card {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 14px;
-    padding: 12px 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-  }
-  .pifu-mobile-product-card__tag {
+  .pifu-routine-badge__step {
     font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    padding: 2px 6px;
-    border-radius: 9999px;
-    border: 1px solid currentColor;
-    margin-bottom: 6px;
-  }
-  .pifu-mobile-product-card__img-wrap {
-    width: 100%;
-    height: 105px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-  .pifu-mobile-product-card__img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 6px 12px rgba(0, 50, 120, 0.16));
-  }
-  .pifu-mobile-product-card__info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .pifu-mobile-product-card__name {
-    font-size: 11px;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.2;
-  }
-  .pifu-mobile-product-card__size {
-    font-size: 10px;
-    color: #64748b;
   }
 
 
