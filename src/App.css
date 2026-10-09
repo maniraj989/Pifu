@@ -989,9 +989,10 @@ html, body {
   display: grid;
   grid-template-columns: 43% 57%;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  min-height: 236px;
 }
 
 .pifu-product-card:hover {
@@ -1003,7 +1004,7 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 230px;
+  min-height: 236px;
   overflow: hidden;
   display: flex;
   align-items: stretch;
@@ -1023,7 +1024,7 @@ html, body {
 }
 
 .pifu-product-card__content {
-  padding: 22px 18px 20px 4px;
+  padding: 22px 20px 22px 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1032,16 +1033,16 @@ html, body {
 
 .pifu-product-card__title {
   font-family: var(--font-display);
-  font-size: 1.12rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 750;
   line-height: 1.25;
   color: #0f172a;
   margin-bottom: 5px;
 }
 
 .pifu-product-card__desc {
-  font-size: 0.82rem;
-  line-height: 1.38;
+  font-size: 0.83rem;
+  line-height: 1.35;
   color: #475569;
   margin-bottom: 14px;
   font-weight: 400;
@@ -1074,10 +1075,10 @@ html, body {
 }
 
 .pifu-product-card__bullet-text {
-  font-size: 0.78rem;
+  font-size: 0.81rem;
   font-weight: 500;
   color: #334155;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .pifu-product-card__action {
@@ -1088,13 +1089,13 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
+  padding: 8px 20px;
   border-radius: 9999px;
   color: #ffffff !important;
-  font-size: 0.82rem;
+  font-size: 0.83rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -1117,7 +1118,7 @@ html, body {
    ========================================================================== */
 .pifu-difference-section {
   width: 100%;
-  padding: 42px 0 76px 0;
+  padding: 48px 0 84px 0;
   background-color: #fafbfc;
   position: relative;
   border-top: 1px solid rgba(15, 23, 42, 0.04);
@@ -1131,9 +1132,9 @@ html, body {
 
 .pifu-difference-layout {
   display: grid;
-  grid-template-columns: 290px 1.2fr 1fr;
+  grid-template-columns: 280px 1.25fr 360px;
   gap: 24px;
-  align-items: stretch;
+  align-items: center;
 }
 
 /* Left Editorial Statement */
@@ -1142,20 +1143,25 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-right: 10px;
+  padding-right: 8px;
 }
 
 .pifu-difference__title {
   font-family: var(--font-display);
-  font-size: 2.15rem;
+  font-size: 2.35rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.12;
   color: #0f172a;
   letter-spacing: -0.025em;
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
-.pifu-diff-the {
+.pifu-diff-top-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #0f172a;
 }
 
@@ -1168,13 +1174,12 @@ html, body {
 
 .pifu-diff-drops {
   position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -12px;
+  right: 0px;
   pointer-events: none;
 }
 
-.pifu-diff-word {
+.pifu-diff-bottom-line {
   color: #0f172a;
 }
 
@@ -1190,7 +1195,7 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
+  padding: 10px 24px;
   border-radius: 9999px;
   background-color: var(--pifu-blue);
   color: #ffffff !important;
@@ -1220,21 +1225,21 @@ html, body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  align-items: stretch;
 }
 
 .pifu-diff-feature-card {
   background-color: #ffffff;
   border-radius: 16px;
-  border: 1px solid #eef2f6;
-  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
-  padding: 22px 6px 18px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.035);
+  padding: 24px 6px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   gap: 14px;
+  height: 190px;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1256,11 +1261,11 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
 }
 
 .pifu-diff-feature-card__line {
-  font-size: 0.74rem;
+  font-size: 0.77rem;
   font-weight: 600;
   color: #1e293b;
   line-height: 1.25;
@@ -1270,7 +1275,7 @@ html, body {
 /* Right Model Photo Card */
 .pifu-difference__model-wrap {
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .pifu-difference__model-card {
@@ -1278,8 +1283,8 @@ html, body {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-  min-height: 200px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+  height: 190px;
   display: flex;
 }
 
@@ -1287,6 +1292,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }

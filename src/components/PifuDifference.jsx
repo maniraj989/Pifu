@@ -14,8 +14,8 @@ export default function PifuDifference() {
       title: 'Gentle',
       subtitle: 'Formulations',
       icon: (
-        <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
-          <circle cx="18" cy="18" r="15" stroke="#529b2b" strokeWidth="2.2" fill="none" />
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="14" stroke="#529b2b" strokeWidth="2.2" fill="none" />
           <path
             d="M13 23.5C14 18 18.5 13 24 12C24 18 19.5 22.5 13.5 24"
             stroke="#529b2b"
@@ -33,7 +33,7 @@ export default function PifuDifference() {
       title: 'Quality',
       subtitle: 'Ingredients',
       icon: (
-        <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
           <path d="M14 8H22" stroke="#1e293b" strokeWidth="2.2" strokeLinecap="round" />
           <path
             d="M16 8V13.5L9.5 25.5C8.8 26.8 9.8 28.5 11.3 28.5H24.7C26.2 28.5 27.2 26.8 26.5 25.5L20 13.5V8"
@@ -53,7 +53,7 @@ export default function PifuDifference() {
       title: 'Daily',
       subtitle: 'Skincare Care',
       icon: (
-        <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
           <path
             d="M18 7C18 7 10 17.5 10 23.5C10 27.9 13.6 31.5 18 31.5C22.4 31.5 26 27.9 26 23.5C26 17.5 18 7 18 7Z"
             stroke="#1e293b"
@@ -75,7 +75,7 @@ export default function PifuDifference() {
       title: 'For All',
       subtitle: 'Skin Types',
       icon: (
-        <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
           <path
             d="M12 18.5C10.5 20.2 10.2 22 10.6 23.8C11.1 25.5 12.8 26.5 13.8 26.5C13.8 29.2 15.8 31 18 31C20.2 31 22.2 29.2 22.2 26.5C23.2 26.5 24.9 25.5 25.4 23.8C25.8 22 25.5 20.2 24 18.5"
             stroke="#1e293b"
@@ -110,20 +110,21 @@ export default function PifuDifference() {
           {/* Left Column: Brand Statement & CTA */}
           <div className="pifu-difference__left">
             <h2 className="pifu-difference__title">
-              <span className="pifu-diff-the">The</span>{' '}
-              <span className="pifu-diff-brand">
-                PIFU
-                {/* Brand water drops accent */}
-                <span className="pifu-diff-drops" aria-hidden="true">
-                  <svg width="24" height="10" viewBox="0 0 24 10" fill="none">
-                    <path d="M5 9C5 9 2.5 5.5 2.5 3.5C2.5 1.8 3.6 0.5 5 0.5C6.4 0.5 7.5 1.8 7.5 3.5C7.5 5.5 5 9 5 9Z" fill="#0062D2" />
-                    <path d="M12 9C12 9 9.5 5.5 9.5 3.5C9.5 1.8 10.6 0.5 12 0.5C13.4 0.5 14.5 1.8 14.5 3.5C14.5 5.5 12 9 12 9Z" fill="#0062D2" />
-                    <path d="M19 9C19 9 16.5 5.5 16.5 3.5C16.5 1.8 17.6 0.5 19 0.5C20.4 0.5 21.5 1.8 21.5 3.5C21.5 5.5 19 9 19 9Z" fill="#0062D2" />
-                  </svg>
+              <span className="pifu-diff-top-line">
+                The{' '}
+                <span className="pifu-diff-brand">
+                  PIFU
+                  {/* Brand signature 3 drops accent */}
+                  <span className="pifu-diff-drops" aria-hidden="true">
+                    <svg width="24" height="9" viewBox="0 0 24 9" fill="none">
+                      <path d="M4 8C4 8 2 5 2 3.2C2 1.8 2.8 0.6 4 0.6C5.2 0.6 6 1.8 6 3.2C6 5 4 8 4 8Z" fill="#0062D2" />
+                      <path d="M11 8C11 8 9 5 9 3.2C9 1.8 9.8 0.6 11 0.6C12.2 0.6 13 1.8 13 3.2C13 5 11 8 11 8Z" fill="#0062D2" />
+                      <path d="M18 8C18 8 16 5 16 3.2C16 1.8 16.8 0.6 18 0.6C19.2 0.6 20 1.8 20 3.2C20 5 18 8 18 8Z" fill="#0062D2" />
+                    </svg>
+                  </span>
                 </span>
               </span>
-              <br />
-              <span className="pifu-diff-word">Difference</span>
+              <span className="pifu-diff-bottom-line">Difference</span>
             </h2>
 
             <p className="pifu-difference__desc">
@@ -165,7 +166,7 @@ export default function PifuDifference() {
           <div className="pifu-difference__model-wrap">
             <div className="pifu-difference__model-card">
               <img
-                src="/assets/difference-model-hd.png"
+                src="/assets/difference-model-clean.png"
                 alt="Confident, Healthy, Naturally You — PIFU Skincare"
                 className="pifu-difference__model-img"
                 loading="lazy"
