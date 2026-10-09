@@ -1351,3 +1351,392 @@ html, body {
   }
 }
 
+/* ==========================================================================
+   KEY INGREDIENTS SECTION
+   ========================================================================== */
+.pifu-ingredients-section {
+  width: 100%;
+  padding: 68px 0 44px 0;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+.pifu-ingredients-section__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.pifu-ingredients-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+
+.pifu-ingredients-header__left {
+  max-width: 600px;
+}
+
+.pifu-ingredients-title {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  font-weight: 750;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.pifu-ingredients-title__accent {
+  color: var(--pifu-blue);
+}
+
+.pifu-ingredients-subtitle {
+  font-size: 0.96rem;
+  color: #64748b;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.pifu-ingredients-learn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.pifu-ingredients-learn-btn:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: var(--pifu-blue);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+  transform: translateY(-1px);
+}
+
+.pifu-ingredients-learn-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.pifu-ingredients-learn-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* 5 Ingredients Grid */
+.pifu-ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.pifu-ingredient-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.035);
+  padding: 22px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pifu-ingredient-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 98, 210, 0.25);
+  box-shadow: 0 12px 28px rgba(0, 98, 210, 0.08);
+}
+
+.pifu-ingredient-card__img-wrap {
+  height: 95px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.pifu-ingredient-card__img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.pifu-ingredient-card:hover .pifu-ingredient-card__img {
+  transform: scale(1.06);
+}
+
+.pifu-ingredient-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pifu-ingredient-card__title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 5px;
+  line-height: 1.25;
+}
+
+.pifu-ingredient-card__desc {
+  font-size: 0.79rem;
+  line-height: 1.4;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   YOUR DAILY SKINCARE ROUTINE SECTION
+   ========================================================================== */
+.pifu-routine-section {
+  width: 100%;
+  padding: 60px 0 92px 0;
+  background-color: #fafbfc;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.pifu-routine-leaf {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.pifu-routine-leaf--left {
+  left: 0;
+}
+
+.pifu-routine-leaf--right {
+  right: 0;
+}
+
+.pifu-routine-section__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.pifu-routine-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Left Editorial Statement */
+.pifu-routine__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 18px;
+  padding-right: 10px;
+}
+
+.pifu-routine__title {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pifu-routine__title-line {
+  color: #0f172a;
+}
+
+.pifu-routine__title-accent {
+  color: var(--pifu-blue);
+}
+
+.pifu-routine__desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 22px;
+  max-width: 250px;
+}
+
+.pifu-routine__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  background-color: var(--pifu-blue);
+  color: #ffffff !important;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 98, 210, 0.25);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pifu-routine__cta-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.pifu-routine__cta-btn:hover {
+  background-color: #004fb0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 98, 210, 0.35);
+}
+
+.pifu-routine__cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Right Steps Wrapper */
+.pifu-routine__steps-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pifu-routine-step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pifu-routine-step-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+}
+
+.pifu-routine-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  border-color: rgba(0, 98, 210, 0.2);
+}
+
+.pifu-routine-step-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pifu-routine-step-card:hover .pifu-routine-step-card__img {
+  transform: scale(1.03);
+}
+
+.pifu-routine-step-item__desc {
+  font-size: 0.8rem;
+  line-height: 1.38;
+  color: #475569;
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 450;
+  max-width: 210px;
+}
+
+/* Arrow Connector centered vertically with the product card */
+.pifu-routine-arrow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 110px;
+  z-index: 5;
+}
+
+.pifu-routine-arrow-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.pifu-routine-arrow-circle:hover {
+  background-color: #f8fafc;
+  color: var(--pifu-blue);
+  border-color: #cbd5e1;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* Responsive Styles for Ingredients & Routine */
+@media (max-width: 1100px) {
+  .pifu-ingredients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pifu-routine-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .pifu-routine__steps-wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pifu-ingredients-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pifu-ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pifu-routine__steps-wrap {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pifu-routine-arrow-connector {
+    transform: rotate(90deg);
+    margin-bottom: 0;
+  }
+  .pifu-routine-leaf {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pifu-ingredients-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
