@@ -11,7 +11,6 @@ export default function Header() {
     { name: 'Products', href: '#products', id: 'products' },
     { name: 'Our Story', href: '#our-story', id: 'our-story' },
     { name: 'Skin Guide', href: '#skin-guide', id: 'skin-guide' },
-    { name: 'Blog', href: '#blog', id: 'blog' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
