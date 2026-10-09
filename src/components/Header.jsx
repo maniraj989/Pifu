@@ -6,34 +6,96 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('Home');
 
+  const navItems = [
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'Products', href: '#products', id: 'products' },
+    { name: 'Our Story', href: '#our-story', id: 'our-story' },
+    { name: 'Skin Guide', href: '#skin-guide', id: 'skin-guide' },
+    { name: 'Blog', href: '#blog', id: 'blog' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
+  ];
+
+  // Handle sticky scrolled class and dynamic scroll spy
   useEffect(() => {
     const handleScroll = () => {
+      // 1. Scrolled state for sticky header backdrop styling
       if (window.scrollY > 8) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
+
+      // 2. Active section spy
+      const headerEl = document.querySelector('.pifu-header');
+      const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+      const scrollPos = window.scrollY + headerHeight + 50;
+
+      for (let i = navItems.length - 1; i >= 0; i--) {
+        const item = navItems[i];
+        const el = document.getElementById(item.id);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (scrollPos >= top) {
+            setActiveNav(item.name);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Products', href: '#products' },
-    { name: 'Our Story', href: '#our-story' },
-    { name: 'Skin Guide', href: '#skin-guide' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  // Smooth scroll handler for all header links
+  const handleNavClick = (e, href, name) => {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+    setActiveNav(name);
+    setMobileMenuOpen(false);
+
+    if (href.startsWith('#')) {
+      const targetId = href.slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        if (targetId === 'home') {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        } else {
+          const headerEl = document.querySelector('.pifu-header');
+          const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+          const elementPosition = targetEl.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - headerHeight;
+
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth',
+          });
+        }
+
+        // Update URL hash without causing an instant page jump
+        if (window.history.pushState) {
+          window.history.pushState(null, '', href);
+        }
+      }
+    }
+  };
 
   return (
     <header className={`pifu-header ${isScrolled ? 'pifu-header--scrolled' : ''}`}>
       <div className="pifu-header__container">
         {/* Left: Brand Logo */}
-        <a href="#home" className="pifu-header__logo-link" aria-label="PIFU DERMOGUIDE Home">
-          <Logo height={40} />
+        <a
+          href="#home"
+          className="pifu-header__logo-link"
+          aria-label="PIFU DERMOGUIDE Home"
+          onClick={(e) => handleNavClick(e, '#home', 'Home')}
+        >
+          <Logo height={42} />
         </a>
 
         {/* Center: Desktop Navigation Links */}
@@ -46,10 +108,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     className={`pifu-header__nav-link ${isActive ? 'pifu-header__nav-link--active' : ''}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActiveNav(item.name);
-                    }}
+                    onClick={(e) => handleNavClick(e, item.href, item.name)}
                   >
                     {item.name}
                     {isActive && <span className="pifu-header__active-indicator" />}
@@ -74,7 +133,11 @@ export default function Header() {
             </svg>
           </button>
 
-          <a href="#products" className="pifu-header__cta-btn">
+          <a
+            href="#products"
+            className="pifu-header__cta-btn"
+            onClick={(e) => handleNavClick(e, '#products', 'Products')}
+          >
             <span>Shop Now</span>
             <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="4" y1="10" x2="16" y2="10" />
@@ -124,10 +187,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     className={activeNav === item.name ? 'active' : ''}
-                    onClick={() => {
-                      setActiveNav(item.name);
-                      setMobileMenuOpen(false);
-                    }}
+                    onClick={(e) => handleNavClick(e, item.href, item.name)}
                   >
                     {item.name}
                   </a>
@@ -139,7 +199,7 @@ export default function Header() {
             <a
               href="#products"
               className="pifu-header__cta-btn pifu-header__cta-btn--full"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, '#products', 'Products')}
             >
               <span>Shop Now</span>
               <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.2">

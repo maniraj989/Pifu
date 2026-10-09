@@ -9,42 +9,50 @@
 
 html, body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .pifu-app {
-  min-height: 140vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   color: var(--text-dark);
-  overflow-x: hidden;
   width: 100%;
+  padding-top: var(--header-height);
+  position: relative;
+}
+
+/* Ensure all targeted sections have proper offset under the sticky/fixed header */
+section[id],
+footer[id] {
+  scroll-margin-top: calc(var(--header-height) + 14px);
 }
 
 /* --------------------------------------------------------------------------
-   HEADER (Sticky with Glassmorphism Opacity on Scroll)
+   HEADER (Fixed Sticky to Top with Glassmorphism Opacity on Scroll)
    -------------------------------------------------------------------------- */
 .pifu-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   z-index: 1000;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .pifu-header--scrolled {
-  background-color: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(24px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
-  box-shadow: 0 12px 36px -8px rgba(0, 98, 210, 0.12), 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(0, 98, 210, 0.1) !important;
+  box-shadow: 0 10px 30px -8px rgba(0, 98, 210, 0.12), 0 4px 14px rgba(15, 23, 42, 0.04) !important;
 }
 
 .pifu-header__container {

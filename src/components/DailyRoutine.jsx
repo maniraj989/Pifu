@@ -37,7 +37,7 @@ export default function DailyRoutine() {
   ];
 
   return (
-    <section className="pifu-routine-section" id="routine" aria-label="Your Daily Skincare Routine">
+    <section className="pifu-routine-section" id="skin-guide" aria-label="Your Daily Skincare Routine">
       {/* Decorative leaf overlays framing both flanks */}
       <img
         src="/assets/routine-leaves-left.png"

@@ -21,7 +21,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="pifu-newsletter-banner" aria-label="Stay Updated with PIFU">
+    <section className="pifu-newsletter-banner" id="blog" aria-label="Stay Updated with PIFU">
       {/* Decorative leaf branch accents on both flanks */}
       <img
         src="/assets/newsletter-leaves-left.png"
