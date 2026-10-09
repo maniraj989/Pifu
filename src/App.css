@@ -604,10 +604,10 @@ html, body {
     gap: 20px;
   }
   .pifu-header__container {
-    padding: 0 24px;
+    padding: 0 28px;
   }
   .pifu-hero__container {
-    padding: 0 24px;
+    padding: 0 28px;
   }
   .pifu-hero__stage {
     grid-template-columns: 1fr;
@@ -617,31 +617,45 @@ html, body {
   .pifu-hero__content {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    max-width: 540px;
+    max-width: 580px;
   }
   .pifu-hero__visual {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    min-height: 120px;
+    height: auto;
   }
   .pifu-hero__trust-badges {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .pifu-trust-badge {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    padding: 7px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(8px);
   }
   .pifu-routine-badge {
-    right: 12%;
-    bottom: 16px;
+    right: 6%;
+    bottom: 12px;
   }
   .pifu-benefits-strip__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    padding: 20px 24px;
   }
   .pifu-benefit-card__divider {
     display: none;
   }
   .pifu-benefit-callout {
-    justify-content: flex-start;
+    justify-content: space-between;
     grid-column: span 2;
-    padding-top: 10px;
+    padding-top: 14px;
     border-top: 1px solid #f1f5f9;
   }
   .pifu-benefit-callout__text {
@@ -649,13 +663,13 @@ html, body {
   }
 }
 
-/* Mobile: <= 860px */
+/* Mobile & Small Tablets: <= 860px */
 @media (max-width: 860px) {
   :root {
     --header-height: 64px;
   }
   .pifu-header__container {
-    padding: 0 18px;
+    padding: 0 20px;
   }
   .pifu-header__nav,
   .pifu-header__search-btn,
@@ -752,14 +766,27 @@ html, body {
     color: var(--pifu-blue);
   }
 
-  /* Mobile Hero Structure:
-     Headline -> Paragraph -> CTA -> Product Composition -> Lifestyle -> Badges -> Benefits */
+  /* Mobile Hero Structure & Overlays */
   .pifu-hero {
-    padding: 14px 0 24px 0;
+    padding: 20px 0 28px 0;
+    min-height: auto;
+  }
+  .pifu-hero__bg-img {
+    object-position: 84% bottom;
+    opacity: 0.88;
+  }
+  .pifu-hero__bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.92) 42%,
+      rgba(255, 255, 255, 0.68) 72%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
   }
   .pifu-hero__container {
-    padding: 0 16px;
-    gap: 18px;
+    padding: 0 20px;
+    gap: 20px;
   }
   .pifu-hero__stage {
     display: flex !important;
@@ -767,6 +794,7 @@ html, body {
     gap: 16px !important;
     min-width: 0 !important;
     width: 100% !important;
+    min-height: auto !important;
   }
   .pifu-hero__content {
     order: 1 !important;
@@ -775,37 +803,40 @@ html, body {
     width: 100% !important;
   }
   .pifu-hero__headline {
-    font-size: clamp(28px, 8.5vw, 34px);
-    line-height: 1.18;
+    font-size: clamp(30px, 8.5vw, 40px);
+    line-height: 1.15;
     margin-bottom: 12px;
   }
   .pifu-hero__eyebrow {
-    font-size: 11px;
+    font-size: 11.5px;
     margin-bottom: 8px;
+    letter-spacing: 0.12em;
   }
   .pifu-hero__description {
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.6;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     max-width: 100%;
   }
   .pifu-hero__cta-group {
     margin-bottom: 16px;
+    display: flex;
   }
   .pifu-btn {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    padding: 12px 28px;
+    font-size: 14.5px;
   }
 
-  /* Mobile Visual: Routine Badge */
+  /* Mobile Routine Floating Badge */
   .pifu-hero__visual {
     order: 2 !important;
     grid-column: unset !important;
     grid-row: unset !important;
-    margin: 4px 0 12px 0;
+    margin: 0;
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 80px !important;
+    min-height: 60px !important;
     height: auto !important;
     display: flex !important;
     justify-content: flex-end !important;
@@ -815,32 +846,53 @@ html, body {
     position: relative !important;
     bottom: unset !important;
     right: unset !important;
-    margin-right: 12px;
+    margin-right: 6px;
   }
   .pifu-routine-badge__circle {
-    width: 72px;
-    height: 72px;
+    width: 74px;
+    height: 74px;
   }
   .pifu-routine-badge__step {
     font-size: 8px;
   }
 
-
-  /* Trust Badges on Mobile */
+  /* Trust Badges as Elegant Blur Pills on Mobile */
   .pifu-hero__trust-badges {
     order: 3 !important;
     grid-column: unset !important;
     grid-row: unset !important;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
     padding-top: 4px;
     width: 100% !important;
+  }
+  .pifu-trust-badge {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    padding: 6px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(8px);
+  }
+  .pifu-trust-badge__icon {
+    width: 20px;
+    height: 20px;
+  }
+  .pifu-trust-badge__icon svg {
+    width: 17px;
+    height: 17px;
+  }
+  .pifu-trust-badge__text {
+    font-size: 10.5px;
+    line-height: 1.2;
   }
 
   /* Bottom Benefits Strip on Mobile */
   .pifu-benefits-strip {
-    margin-top: 10px;
+    margin-top: 6px;
     width: 100% !important;
   }
   .pifu-benefits-strip__grid {
@@ -848,6 +900,7 @@ html, body {
     padding: 16px 16px;
     gap: 14px;
     width: 100% !important;
+    border-radius: 16px;
   }
   .pifu-benefit-card__divider {
     display: none;
@@ -1007,20 +1060,23 @@ html, body {
   min-height: 236px;
   overflow: hidden;
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px 0 10px;
 }
 
 .pifu-product-card__visual-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: left bottom;
+  max-height: 240px;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pifu-product-card:hover .pifu-product-card__visual-img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .pifu-product-card__content {
@@ -1301,53 +1357,146 @@ html, body {
   transform: scale(1.03);
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 1160px) {
+/* Responsive Breakpoints for Products & Difference */
+@media (max-width: 1160px) and (min-width: 681px) {
+  .pifu-our-products__container {
+    padding: 0 28px;
+  }
   .pifu-our-products__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  .pifu-difference-layout {
-    grid-template-columns: 1fr 1fr;
-  }
-  .pifu-difference__model-wrap {
+  .pifu-our-products__grid > .pifu-product-card:last-child {
     grid-column: span 2;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 820px) {
-  .pifu-our-products__header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .pifu-our-products__grid {
-    grid-template-columns: 1fr;
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
   }
   .pifu-difference-layout {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 26px;
+  }
+  .pifu-difference__left {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .pifu-difference__desc {
+    max-width: 520px;
+  }
+  .pifu-difference__features {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .pifu-diff-feature-card {
+    height: auto;
+    min-height: 155px;
+    padding: 20px 10px;
   }
   .pifu-difference__model-wrap {
     grid-column: span 1;
+    margin-top: 6px;
   }
-  .pifu-difference__features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .pifu-product-card {
-    grid-template-columns: 40% 60%;
+  .pifu-difference__model-card {
+    height: 220px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 680px) {
+  .pifu-our-products {
+    padding: 48px 0 32px 0;
+  }
+  .pifu-our-products__container {
+    padding: 0 20px;
+  }
+  .pifu-our-products__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .pifu-our-products__title {
+    font-size: 2rem;
+  }
+  .pifu-our-products__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
   .pifu-product-card {
     grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 20px;
+    overflow: hidden;
   }
   .pifu-product-card__visual-wrap {
-    min-height: 180px;
+    height: 240px;
+    width: 100%;
+    min-height: unset;
+    padding: 16px 12px 0;
+  }
+  .pifu-product-card__visual-img {
+    object-position: center bottom;
   }
   .pifu-product-card__content {
-    padding: 16px;
+    padding: 20px 22px 24px;
+  }
+  .pifu-product-card__title {
+    font-size: 1.25rem;
+  }
+  .pifu-product-card__desc {
+    font-size: 0.86rem;
+  }
+  .pifu-product-card__bullet-text {
+    font-size: 0.84rem;
+  }
+  .pifu-product-card__btn {
+    padding: 9px 24px;
+    font-size: 0.86rem;
+  }
+
+  /* The PIFU Difference Mobile */
+  .pifu-difference-section {
+    padding: 42px 0 52px 0;
+  }
+  .pifu-difference-section__container {
+    padding: 0 20px;
+  }
+  .pifu-difference-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .pifu-difference__left {
+    padding-right: 0;
+    max-width: 100%;
+  }
+  .pifu-difference__title {
+    font-size: 1.95rem;
+  }
+  .pifu-difference__desc {
+    max-width: 100%;
+  }
+  .pifu-difference__features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .pifu-diff-feature-card {
+    height: auto;
+    min-height: 135px;
+    padding: 18px 8px 16px;
+    border-radius: 14px;
+  }
+  .pifu-diff-feature-card__icon {
+    height: 32px;
+    width: 32px;
+  }
+  .pifu-diff-feature-card__line {
+    font-size: 0.76rem;
+  }
+  .pifu-difference__model-card {
+    height: 180px;
+    border-radius: 16px;
+    margin-top: 8px;
   }
 }
 
@@ -1699,43 +1848,125 @@ html, body {
 }
 
 /* Responsive Styles for Ingredients & Routine */
-@media (max-width: 1100px) {
+@media (max-width: 1100px) and (min-width: 681px) {
+  .pifu-ingredients-section__container {
+    padding: 0 28px;
+  }
   .pifu-ingredients-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .pifu-routine-section__container {
+    padding: 0 28px;
   }
   .pifu-routine-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 30px;
+  }
+  .pifu-routine__left {
+    max-width: 100%;
+    padding: 0;
+  }
+  .pifu-routine__desc {
+    max-width: 500px;
   }
   .pifu-routine__steps-wrap {
     width: 100%;
+    gap: 8px;
+  }
+  .pifu-routine-arrow-connector {
+    margin-top: 80px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 680px) {
+  .pifu-ingredients-section {
+    padding: 44px 0 34px 0;
+  }
+  .pifu-ingredients-section__container {
+    padding: 0 20px;
+  }
   .pifu-ingredients-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .pifu-ingredients-title {
+    font-size: 2rem;
   }
   .pifu-ingredients-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .pifu-ingredient-card {
+    padding: 18px 12px 16px;
+    border-radius: 16px;
+  }
+  .pifu-ingredient-card__img-wrap {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .pifu-ingredient-card:last-child {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+  }
+  .pifu-ingredient-card:last-child .pifu-ingredient-card__img-wrap {
+    width: 80px;
+    height: 65px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  /* Routine Section Mobile */
+  .pifu-routine-section {
+    padding: 44px 0 54px 0;
+  }
+  .pifu-routine-section__container {
+    padding: 0 20px;
+  }
+  .pifu-routine-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pifu-routine__left {
+    padding: 0;
+    max-width: 100%;
+  }
+  .pifu-routine__title {
+    font-size: 2rem;
+  }
+  .pifu-routine__desc {
+    max-width: 100%;
   }
   .pifu-routine__steps-wrap {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+  .pifu-routine-step-item {
+    max-width: 380px;
+    width: 100%;
+  }
+  .pifu-routine-step-card {
+    border-radius: 16px;
+    width: 100%;
   }
   .pifu-routine-arrow-connector {
     transform: rotate(90deg);
-    margin-bottom: 0;
+    margin: 14px auto;
+  }
+  .pifu-routine-arrow-circle {
+    width: 34px;
+    height: 34px;
   }
   .pifu-routine-leaf {
     display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .pifu-ingredients-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -2081,66 +2312,168 @@ html, body {
   border-color: var(--pifu-blue);
 }
 
-/* Responsive Footer */
-@media (max-width: 1024px) {
+/* Responsive Footer & Newsletter */
+@media (max-width: 1024px) and (min-width: 681px) {
+  .pifu-newsletter-banner {
+    padding: 36px 0;
+  }
+  .pifu-newsletter__container {
+    padding: 0 28px;
+    gap: 24px;
+  }
+  .pifu-newsletter__leaf--left {
+    width: 54px;
+  }
+  .pifu-newsletter__leaf--right {
+    width: 68px;
+  }
+  .pifu-newsletter__title {
+    font-size: 1.75rem;
+  }
+  .pifu-newsletter__input-wrap {
+    width: 380px;
+  }
+  .pifu-footer {
+    padding: 50px 0 22px 0;
+  }
+  .pifu-footer__container {
+    padding: 0 28px;
+  }
   .pifu-footer__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 24px;
+    margin-bottom: 36px;
   }
   .pifu-footer__col--brand {
-    grid-column: span 3;
+    grid-column: span 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+  }
+  .pifu-footer__brand-desc {
+    max-width: 380px;
+    margin: 0;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 680px) {
+  .pifu-newsletter-banner {
+    padding: 34px 0;
+  }
   .pifu-newsletter__container {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 24px;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 0 20px;
   }
+  .pifu-newsletter__text {
+    max-width: 100%;
+  }
+  .pifu-newsletter__title {
+    font-size: 1.7rem;
+  }
+  .pifu-newsletter__subtitle {
+    font-size: 0.9rem;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .pifu-newsletter__form {
+    width: 100%;
+    justify-content: center;
+  }
+  /* Newsletter Mobile */
   .pifu-newsletter__input-wrap {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 4px 4px 4px 14px;
+  }
+  .pifu-newsletter__input {
+    min-width: 0;
+    width: 100%;
+    font-size: 0.84rem;
+    padding-right: 6px;
+  }
+  .pifu-newsletter__submit-btn {
+    flex-shrink: 0;
+    padding: 9px 18px;
+    font-size: 0.82rem;
   }
   .pifu-newsletter__leaf {
-    display: none;
+    opacity: 0.55;
+  }
+  .pifu-newsletter__leaf--left {
+    width: 38px;
+  }
+  .pifu-newsletter__leaf--right {
+    width: 48px;
+  }
+
+  /* Footer Mobile */
+  .pifu-footer {
+    padding: 44px 0 24px 0;
+  }
+  .pifu-footer__container {
+    padding: 0 20px;
   }
   .pifu-footer__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+    margin-bottom: 32px;
   }
   .pifu-footer__col--brand {
     grid-column: span 2;
+    align-items: center;
+    text-align: center;
+  }
+  .pifu-footer__brand-desc {
+    text-align: center;
+    margin: 8px auto 16px;
+    max-width: 320px;
+  }
+  .pifu-footer__socials {
+    justify-content: center;
+  }
+  .pifu-footer__col--contact {
+    grid-column: span 2;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
   }
   .pifu-footer__bottom {
     flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding-top: 20px;
+  }
+  .pifu-footer__legal-links {
+    justify-content: center;
   }
   .pifu-footer__back-to-top {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 22px;
+    right: 20px;
     margin-left: 0;
     z-index: 100;
+    box-shadow: 0 4px 14px rgba(0, 98, 210, 0.25);
   }
 }
 
-@media (max-width: 480px) {
-  .pifu-footer__grid {
-    grid-template-columns: 1fr;
-  }
-  .pifu-footer__col--brand {
-    grid-column: span 1;
-  }
+@media (max-width: 400px) {
   .pifu-newsletter__input-wrap {
-    flex-direction: column;
-    border-radius: 16px;
-    padding: 12px;
-    gap: 10px;
+    padding: 3px 3px 3px 12px;
+  }
+  .pifu-newsletter__input {
+    font-size: 0.78rem;
   }
   .pifu-newsletter__submit-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 8px 14px;
+    font-size: 0.78rem;
   }
 }
 
