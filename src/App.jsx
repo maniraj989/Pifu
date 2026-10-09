@@ -5,6 +5,8 @@ import OurProducts from './components/OurProducts';
 import PifuDifference from './components/PifuDifference';
 import KeyIngredients from './components/KeyIngredients';
 import DailyRoutine from './components/DailyRoutine';
+import Newsletter from './components/Newsletter';
+import Footer from './components/Footer';
 import './App.css';
 
 export default function App() {
@@ -28,9 +30,16 @@ export default function App() {
 
         {/* Your Daily Skincare Routine Section */}
         <DailyRoutine />
+
+        {/* Stay Updated with PIFU Newsletter */}
+        <Newsletter />
       </main>
+
+      {/* Main Footer */}
+      <Footer />
     </div>
   );
 }
+
 
 

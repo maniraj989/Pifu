@@ -1739,4 +1739,410 @@ html, body {
   }
 }
 
+/* ==========================================================================
+   STAY UPDATED WITH PIFU (NEWSLETTER BANNER)
+   ========================================================================== */
+.pifu-newsletter-banner {
+  width: 100%;
+  padding: 38px 0;
+  background: linear-gradient(90deg, #e4f2ff 0%, #edf7ff 45%, #d9eefc 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 98, 210, 0.06);
+}
+
+.pifu-newsletter__leaf {
+  position: absolute;
+  top: 0;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pifu-newsletter__leaf--left {
+  left: 0;
+  width: 66px;
+}
+
+.pifu-newsletter__leaf--right {
+  right: 0;
+  width: 86px;
+}
+
+.pifu-newsletter__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.pifu-newsletter__text {
+  max-width: 560px;
+}
+
+.pifu-newsletter__title {
+  font-family: var(--font-display);
+  font-size: 1.95rem;
+  font-weight: 750;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.pifu-newsletter__title-blue {
+  color: var(--pifu-blue);
+}
+
+.pifu-newsletter__subtitle {
+  font-size: 0.94rem;
+  color: #4b5563;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.pifu-newsletter__form {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pifu-newsletter__input-wrap {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  padding: 4px 5px 4px 22px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  border: 1px solid #dbe2ea;
+  width: 440px;
+  transition: all 0.22s ease;
+}
+
+.pifu-newsletter__input-wrap:focus-within {
+  border-color: var(--pifu-blue);
+  box-shadow: 0 4px 18px rgba(0, 98, 210, 0.15);
+}
+
+.pifu-newsletter__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.88rem;
+  color: #1f2937;
+  font-family: inherit;
+  padding-right: 12px;
+}
+
+.pifu-newsletter__input::placeholder {
+  color: #9ca3af;
+}
+
+.pifu-newsletter__submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  background-color: var(--pifu-blue);
+  color: #ffffff !important;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 98, 210, 0.25);
+  white-space: nowrap;
+}
+
+.pifu-newsletter__submit-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.pifu-newsletter__submit-btn:hover {
+  background-color: #004fb0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 98, 210, 0.32);
+}
+
+.pifu-newsletter__submit-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   MAIN FOOTER SECTION
+   ========================================================================== */
+.pifu-footer {
+  background-color: #faf9f5;
+  padding: 60px 0 24px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.pifu-footer__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 44px;
+}
+
+.pifu-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1fr 1.3fr;
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+/* Brand Column */
+.pifu-footer__col--brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pifu-footer__logo-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.pifu-footer__brand-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #556070;
+  margin: 0 0 20px 0;
+  max-width: 250px;
+  font-weight: 400;
+}
+
+.pifu-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pifu-footer__social-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0f172a;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pifu-footer__social-btn:hover {
+  background-color: var(--pifu-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 98, 210, 0.25);
+}
+
+/* Navigation & Support Columns */
+.pifu-footer__col-title {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.pifu-footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.pifu-footer__link {
+  color: #4b5563;
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  display: inline-block;
+}
+
+.pifu-footer__link:hover {
+  color: var(--pifu-blue);
+  transform: translateX(2px);
+}
+
+/* Contact Column */
+.pifu-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pifu-footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #374151;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.pifu-footer__contact-icon {
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pifu-footer__contact-link {
+  color: #374151;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  word-break: break-all;
+}
+
+.pifu-footer__contact-link:hover {
+  color: var(--pifu-blue);
+}
+
+.pifu-footer__contact-address {
+  font-style: normal;
+  color: #374151;
+}
+
+/* Bottom Legal Bar */
+.pifu-footer__bottom {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.pifu-footer__copyright {
+  font-size: 0.82rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.pifu-footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.82rem;
+}
+
+.pifu-footer__legal-link {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.pifu-footer__legal-link:hover {
+  color: var(--pifu-blue);
+}
+
+.pifu-footer__legal-divider {
+  color: #d1d5db;
+}
+
+/* Back to Top Floating Button */
+.pifu-footer__back-to-top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: var(--pifu-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  margin-left: 20px;
+}
+
+.pifu-footer__back-to-top:hover {
+  background-color: var(--pifu-blue);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 98, 210, 0.22);
+  border-color: var(--pifu-blue);
+}
+
+/* Responsive Footer */
+@media (max-width: 1024px) {
+  .pifu-footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .pifu-footer__col--brand {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .pifu-newsletter__container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 24px;
+  }
+  .pifu-newsletter__input-wrap {
+    width: 100%;
+  }
+  .pifu-newsletter__leaf {
+    display: none;
+  }
+  .pifu-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .pifu-footer__col--brand {
+    grid-column: span 2;
+  }
+  .pifu-footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .pifu-footer__back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    margin-left: 0;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 480px) {
+  .pifu-footer__grid {
+    grid-template-columns: 1fr;
+  }
+  .pifu-footer__col--brand {
+    grid-column: span 1;
+  }
+  .pifu-newsletter__input-wrap {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 12px;
+    gap: 10px;
+  }
+  .pifu-newsletter__submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
 
